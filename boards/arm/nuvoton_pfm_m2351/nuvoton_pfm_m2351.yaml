@@ -1,0 +1,10 @@
+identifier: nuvoton_pfm_m2351
+name: NUVOTON-PFM-M2351
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 96
+flash: 512

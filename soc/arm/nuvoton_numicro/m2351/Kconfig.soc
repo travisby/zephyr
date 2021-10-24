@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+
+choice
+	prompt "NUVOTON M2351 MCU Selection"
+	depends on SOC_SERIES_M2351
+
+config SOC_M2351
+	bool "M2351"
+	select HAS_NUMICRO_HAL
+
+endchoice
