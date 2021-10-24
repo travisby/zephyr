@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_M2351
+
+config NUM_IRQS
+    # XXX: What number should I pick? 
+    # "An implementation-defined number of interrupts, in the range 1-240 interrupts"
+	default 108
+
+endif # SOC_M2351

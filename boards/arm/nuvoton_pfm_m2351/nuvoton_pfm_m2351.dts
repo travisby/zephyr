@@ -1,0 +1,29 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/dts-v1/;
+#include <nuvoton/m2351.dtsi>
+
+/ {
+	model = "Nuvoton PFM M2351 board";
+	compatible = "nuvoton,pfm-m2351", "nuvoton,m2351";
+
+	chosen {
+		zephyr,console = &uart0;
+		zephyr,shell = &uart0;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+};
+
+&flash0 {
+	reg = <0x0 DT_SIZE_K(512)>;
+};
+
+&sram0 {
+	reg = <0x20000000 DT_SIZE_K(96)>;
+};
+
+&uart0 {
+	current-speed = <115200>;
+	status = "okay";
+};

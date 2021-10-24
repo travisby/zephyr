@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_NUVOTON_PFM_M2351
+	bool "NUVOTON PFM M2351 Development Board"
+	depends on SOC_M2351
