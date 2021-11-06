@@ -3,12 +3,13 @@
 config SOC_SERIES_M2351
 	bool "Nuvoton M2351 Series MCU"
 	select ARM
-    # XXX:  are there more CPU_CORTEX_M things I should be adding?
+	# XXX:  are there more CPU_CORTEX_M things I should be adding?
 	select CPU_CORTEX_M23
 	select CPU_CORTEX_M_HAS_DWT
 	select CPU_HAS_ARM_MPU
 	select SOC_FAMILY_NUMICRO
-    select CPU_CORTEX_M_HAS_SYSTICK
-    select CPU_CORTEX_M_HAS_VTOR
+	select CPU_CORTEX_M_HAS_SYSTICK
+	select CPU_CORTEX_M_HAS_VTOR
+	select UART_NUMICRO if CONFIG_SERIAL
 	help
 	  Enable support for NUVOTON M2351 MCU series
