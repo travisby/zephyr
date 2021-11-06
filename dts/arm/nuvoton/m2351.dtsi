@@ -5,15 +5,12 @@
 
 / {
 	cpus {
-        // XXX: Not sure what these fields are
 		#address-cells = <1>;
 		#size-cells = <0>;
 
 		cpu@0 {
 			device_type = "cpu";
-            // XXX: is this correct?
 			compatible = "arm,cortex-m23";
-            // XXX: is this correct?
 			reg = <0>;
 		};
 	};
@@ -27,20 +24,20 @@
 
 	sram0: memory@20000000 {
 		compatible = "mmio-sram";
-        label = "SRAM0_BA";
+		label = "SRAM0_BA";
 	};
 
 	sysclk: system-clock {
 		compatible = "fixed-clock";
 		clock-frequency = <64000000>;
-        // XXX: Not sure what these fields are
+		// XXX: Not sure what this field is
 		#clock-cells = <0>;
 	};
 
 	soc {
 		uart0: serial@40070000 {
 			compatible = "nuvoton,numicro-uart";
-            // XXX: The datasheet says a uart registry is 0x4C in size, but the size listed in the other numicro is way larger.  Am I looking at the wrong thing?
+			// XXX: The datasheet says a uart registry is 0x4C in size, but the size listed in the other numicro is way larger.  Am I looking at the wrong thing?
 			reg = <0x40070000 0x4C>;
 			status = "disabled";
 			label = "UART_0";
@@ -49,6 +46,6 @@
 };
 
 &nvic {
-    // "A programmable priority level of 0-3 for each interrupt"
+	// "A programmable priority level of 0-3 for each interrupt"
 	arm,num-irq-priority-bits = <2>;
 };
