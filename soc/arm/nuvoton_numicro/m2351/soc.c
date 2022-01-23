@@ -19,8 +19,7 @@ void z_arm_platform_init(void)
     // And considering Zephyr has code for VTOR already, it's probably(?) handled elsewhere
     // SystemInit();
 
-    // XXX: Clock setup?
-    // UART works w/o anything else here
+    CLK_SetCoreClock(FREQ_64MHZ);
 
     SystemCoreClockUpdate();
 
